@@ -33,7 +33,7 @@ ggplot(., aes(x = years, y = value, group = name, fill = name)) +
        x = "Year",
        caption = "Data extracted from Pubmed")+
   ggeasy::easy_all_text_color("black") +
-  ggeasy::easy_all_text_size(size = 18)
+  ggeasy::easy_all_text_size(size = 28)
 
 plt_df 
 
@@ -41,6 +41,6 @@ plt <- plt_df + transition_reveal(years) +
   ease_aes('linear') +
   shadow_mark()
 
-pubs <- animate(plt, renderer = gifski_renderer(loop = FALSE),fps = 20, height = 800, width = 1200)
-anim_save("../../presentation_vb/eco_resilience.gif")
+pubs <- animate(plt, renderer = gifski_renderer(loop = FALSE),fps = 10, height = 800, width = 1200)
+anim_save("../plot/ecosystem_resilience.gif")
 
